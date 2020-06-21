@@ -1,25 +1,47 @@
 public class DigitSumChallenge {
     public static void main(String[] args) {
-        System.out.println(sumDigits(-1));
+        int num = 125;
+        System.out.println("The sum of the digits in number " + num + " is "+sumDigits(num));
     }
 
-    public static int sumDigits (int number){
+    private static int sumDigits (int number){
         int totalSumDigits = 0;
-        if (number >= 10){
-            while (number != 0) {
+//        if (number >= 10){
+//            while (number > 0) {
+//
+//                //extract the least-significant digit
+//                int extractor = number % 10;
+//
+//                //sum all least-significant digit
+//                totalSumDigits += extractor;
+//
+//                //discard the least-significant digit
+//                number = number / 10;
+//                //number /= 10;
+//            }
+//            return totalSumDigits;
+//        } else {
+//        return -1;
+//        }
 
-                //extract the least-significant digit
-                int extractor = number % 10;
+        // alternative way
+        if (number < 10){
+            return -1;
+        }
 
-                //sum all least-significant digit
-                totalSumDigits += extractor;
+        while (number > 0) {
 
-                //discard the least-significant digit
-                number = number / 10;
-            }
-            return totalSumDigits;
-        } else {}
-        return -1;
+            //extract the least-significant digit
+            int extractor = number % 10;
+
+            //sum all least-significant digit
+            totalSumDigits += extractor;
+
+            //discard the least-significant digit
+//            number = number / 10;
+            number /= 10;
+        }
+        return totalSumDigits;
     }
 }
 
